@@ -1,0 +1,7 @@
+edu\escuelaing\arep\microspringboot\Test.class
+edu\escuelaing\arep\microspringboot\Microspring.class
+edu\escuelaing\arep\microspringboot\WebServices.class
+edu\escuelaing\arep\microspringboot\JunitTest.class
+edu\escuelaing\arep\microspringboot\MicroSpringBoot.class
+edu\escuelaing\arep\microspringboot\httpServer\Server.class
+edu\escuelaing\arep\microspringboot\anotaciones\RequestMapping.class
