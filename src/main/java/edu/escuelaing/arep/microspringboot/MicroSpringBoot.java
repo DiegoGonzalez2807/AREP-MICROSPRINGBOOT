@@ -72,12 +72,12 @@ public class MicroSpringBoot {
             PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             String inputLine, outputLine;
-            URI possiblePath = null;
+            String possiblePath = null;
+            boolean flag = true;
             while ((inputLine = in.readLine()) != null) {
-                if(inputLine.contains("/")){
-                    System.out.println("LINEA QUE LA CONTIENE "+inputLine);
-                    possiblePath = new URI(inputLine.split(" ")[1]);
-                    break;
+                if (flag) {
+                    flag = false;
+                    possiblePath = inputLine.split(" ")[1];
                 }
               
                 System.out.println("Received: " + inputLine);
@@ -88,7 +88,7 @@ public class MicroSpringBoot {
 
             String content = "404 NOT FOUND";
             if(methodsMap.containsKey(possiblePath)){
-                content = (String) methodsMap.get(possiblePath.getPath()).invoke(null);
+                content = (String) methodsMap.get(possiblePath).invoke(null);
             }
 
             outputLine = "HTTP/1.1 200 OK\r\n"
