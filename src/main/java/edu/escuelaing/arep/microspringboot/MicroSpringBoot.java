@@ -87,7 +87,7 @@ public class MicroSpringBoot {
             }   
 
             String content = "404 NOT FOUND";
-            if(methodsMap.containsKey(possiblePath.getPath())){
+            if(methodsMap.containsKey(possiblePath)){
                 content = (String) methodsMap.get(possiblePath.getPath()).invoke(null);
             }
 
